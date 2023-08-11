@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Script helps remove environment related hashes.
+# @See https://www.drupal.org/docs/8/distributions/creating-distributions/how-to-write-a-drupal-8-installation-profile#s-configuration-files
+
+fin exec "find $1 -type f -exec sed -i -e '/^uuid: /d' {} \;"
+fin exec "find $1 -type f -exec sed -i -e '/_core:/,+1d' {} \;"

@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+fin exec 'mkdir -p web/sites/simpletest/browser_output'
+fin exec 'chmod -R 777 web/sites/simpletest'
+
+fin exec "vendor/bin/phpunit -c .docksal/etc/phpunit/phpunit.xml.dist $1"

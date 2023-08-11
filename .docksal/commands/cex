@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Script help export config with prior cleanup for existing config.
+
+rm -rf config/sync
+fin drush cex -y
