@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+## Docksal wrapper commend over scripts/rebuild-test.sh
+
+fin exec "bash /var/www/scripts/rebuild-test.sh"
