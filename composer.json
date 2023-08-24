@@ -92,35 +92,6 @@
         "mikehaertl/phpwkhtmltopdf": "^2.5",
         "tecnickcom/tcpdf": "~6"
     },
-    "scripts": {
-        "post-install-cmd": [
-            "ln -sf ../../scripts/git/hooks/pre-commit .git/hooks/pre-commit",
-            "@install-codestandards"
-        ],
-        "install-codestandards": [
-            "Dealerdirect\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\Plugin::run"
-        ],
-        "coding-standards-check/drupal-check": [
-            "php vendor/bin/drupal-check --deprecations --analysis web/profiles/custom/os2loop"
-        ],
-        "coding-standards-check/phpcs": [
-            "php vendor/bin/phpcs --standard=phpcs.xml.dist"
-        ],
-        "coding-standards-check/twigcs": [
-            "twigcs web/profiles/custom/os2loop/themes/os2loop_theme/templates"
-        ],
-        "coding-standards-check": [
-            "@coding-standards-check/phpcs",
-            "@coding-standards-check/drupal-check",
-            "@coding-standards-check/twigcs"
-        ],
-        "coding-standards-apply/phpcs": [
-            "vendor/bin/phpcbf --standard=phpcs.xml.dist"
-        ],
-        "coding-standards-apply": [
-            "@coding-standards-apply/phpcs"
-        ]
-    },
     "conflict": {
         "drupal/drupal": "*"
     },
