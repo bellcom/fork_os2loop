@@ -365,12 +365,13 @@ class FormHelper {
    *   The form state.
    */
   public function addDocumentSubmit(array &$form, FormStateInterface $formState) {
-    $data = $formState->getValue(self::DOCUMENTS_TREE) ?: ['weight' => 1];
+    $data = $formState->getValue(self::DOCUMENTS_TREE) ?: [];
     $documentId = $this->getDocumentId($formState);
     if (NULL !== $documentId) {
       $document = $this->collectionHelper->loadDocument($documentId);
       if ($document && !isset($data[$document->id()])) {
-        $weight = (int) max(array_column($data, 'weight'));
+        $_data = empty($data) ? [['weight' => 1]] : $data;
+        $weight = (int) max(array_column($_data, 'weight'));
         $data[$document->id()] = [
           'weight' => $weight + 1,
           'id' => $document->id(),
