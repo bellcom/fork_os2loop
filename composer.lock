@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "76c7fc3b9e913c9fdd824136278f23e6",
+    "content-hash": "4589901a1607b089e470bd63d7368eed",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -7383,6 +7383,36 @@
                 "source": "https://github.com/onelogin/php-saml/"
             },
             "time": "2022-07-15T20:44:36+00:00"
+        },
+        {
+            "name": "os2web/os2web_simplesaml",
+            "version": "8.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/OS2web/os2web_simplesaml.git",
+                "reference": "968a39ecfacfcb5bfb04a4ac2d353aa38575506e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/OS2web/os2web_simplesaml/zipball/968a39ecfacfcb5bfb04a4ac2d353aa38575506e",
+                "reference": "968a39ecfacfcb5bfb04a4ac2d353aa38575506e",
+                "shasum": ""
+            },
+            "require": {
+                "drupal/simplesamlphp_auth": "^3.1"
+            },
+            "default-branch": true,
+            "type": "drupal-module",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "EUPL-1.2"
+            ],
+            "description": "Enhances integration with simplesamlphp_auth module, by force triggering SimpleSAML auth page redirect when certain criteria are met",
+            "support": {
+                "issues": "https://github.com/OS2web/os2web_simplesaml/issues",
+                "source": "https://github.com/OS2web/os2web_simplesaml/tree/8.x"
+            },
+            "time": "2023-02-23T10:41:32+00:00"
         },
         {
             "name": "pear/archive_tar",
