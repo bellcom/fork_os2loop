@@ -197,7 +197,7 @@
             "drupal/devel": {
                 "Public methods are not visible in kint (https://www.drupal.org/project/devel/issues/3112201)": "https://www.drupal.org/files/issues/2022-04-26/devel_3112201_4.patch"
             },
-            "drupal/views": {
+            "drupal/core": {
                 "Fix": "patches/view_diff.patch"
             }
         }
