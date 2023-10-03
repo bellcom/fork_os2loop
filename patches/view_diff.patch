@@ -1,0 +1,30 @@
+diff --git a/modules/views/src/Plugin/views/field/RenderedEntity.php b/modules/views/src/Plugin/views/field/RenderedEntity.php
+index dce5efcd21..100a9ab38d 100644
+--- a/modules/views/src/Plugin/views/field/RenderedEntity.php
++++ b/modules/views/src/Plugin/views/field/RenderedEntity.php
+@@ -129,14 +129,18 @@ class RenderedEntity extends FieldPluginBase implements CacheableDependencyInter
+    * {@inheritdoc}
+    */
+   public function render(ResultRow $values) {
+-    $entity = $this->getEntityTranslation($this->getEntity($values), $values);
+     $build = [];
+-    if (isset($entity)) {
+-      $access = $entity->access('view', NULL, TRUE);
+-      $build['#access'] = $access;
+-      if ($access->isAllowed()) {
+-        $view_builder = $this->entityTypeManager->getViewBuilder($this->getEntityTypeId());
+-        $build += $view_builder->view($entity, $this->options['view_mode'], $entity->language()->getId());
++    $interface = $this->getEntity($values);
++    if (!empty($interface) && ($interface instanceof EntityInterface)) {
++      $entity = $this->getEntityTranslation($interface, $values);
++      if (isset($entity)) {
++        $access = $entity->access('view', NULL, TRUE);
++        $build['#access'] = $access;
++        if ($access->isAllowed()) {
++          $view_builder = $this->entityTypeManager->getViewBuilder($this->getEntityTypeId());
++          $build += $view_builder->view($entity, $this->options['view_mode'], $entity->language()
++            ->getId());
++        }
+       }
+     }
+     return $build;
